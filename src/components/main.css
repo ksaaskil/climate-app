@@ -1,12 +1,10 @@
 .main {
   position: relative;
   width: 100%;
-  height: 100%;
-  background-color: #e0edc5;
-  text-align: center;
 }
 
 .main__title {
+  text-align: center;
   margin: 3rem auto;
   font-size: 4rem;
   font-family: "Baskervville";

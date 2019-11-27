@@ -8,16 +8,19 @@
 
 html {
   font-size: 62.5%; /* 10px of 16px */
-  height: 100%;
 }
 
 body {
+  --darkest: #596f62;
+  --darker: #92aa83;
+  --green: #7ea16b;
+  --light: #bad9b5;
+  --white: #ffffff;
   font-family: "Open Sans", sans-serif;
-  height: 100%;
-  background-color: #e0edc5;
+  background-color: var(--light);
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #92aa83;
+  color: var(--darkest);
   /*padding: 3rem;*/
   box-sizing: border-box;
 }
