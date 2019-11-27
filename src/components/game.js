@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Play from "./play"
 import "./game.css"
 
 const tasks = ["Take a short shower", "Have a holiday close to you"]
