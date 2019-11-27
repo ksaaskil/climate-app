@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
       />
       <div className="content">
-        <main>{children}</main>
+        <main style={{ height: "100%" }}>{children}</main>
         {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
