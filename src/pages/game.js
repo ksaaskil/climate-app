@@ -1,15 +1,15 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Head from "../components/helmet"
 import Game from "../components/game"
 import "./global.css"
 
-const IndexPage = () => (
+const GamePage = () => (
   <Layout>
-    <SEO title="Home" />
+    <Head title="Home" />
     <Game />
   </Layout>
 )
 
-export default IndexPage
+export default GamePage
