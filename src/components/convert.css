@@ -1,0 +1,10 @@
+.convert {
+  width: 100%;
+}
+
+.convert__title {
+  text-align: center;
+  margin: 3rem auto;
+  font-size: 4rem;
+  font-family: "Baskervville";
+}

@@ -12,6 +12,14 @@ module.exports = {
         name: "Play",
         link: "/game",
       },
+      {
+        name: "Search",
+        link: "/search",
+      },
+      {
+        name: "Convert",
+        link: "/convert",
+      },
     ],
   },
   plugins: [
