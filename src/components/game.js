@@ -3,11 +3,10 @@ import "./game.css"
 
 const tasks = ["Take a short shower", "Have a holiday close to you"]
 
-const finished = {}
-
-tasks.forEach(task => {
-  finished[task] = false
-})
+const baseTasks = tasks.reduce((acc, val) => {
+  acc[val] = false
+  return acc
+}, {})
 
 const Task = ({ title, onFinish }) => {
   const [state, setState] = useState(false)
@@ -32,8 +31,8 @@ const Task = ({ title, onFinish }) => {
 }
 
 const Game = () => {
-  const [state, setState] = useState(finished)
-  const [tasksLeft, setTasksLeft] = useState(Object.keys(finished).length)
+  const [state, setState] = useState(baseTasks)
+  const [tasksLeft, setTasksLeft] = useState(Object.keys(baseTasks).length)
   const onFinishTask = task => {
     const finishedCopy = { ...state, [task]: true }
     setState(finishedCopy)
