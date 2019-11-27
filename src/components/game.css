@@ -2,11 +2,49 @@
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
 }
 
 .game__title {
+  text-align: center;
   margin: 3rem auto;
   font-size: 4rem;
   font-family: "Baskervville";
+}
+
+.game__tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game__task {
+  margin: 0 auto;
+  align-self: center;
+  display: flex;
+  margin: 3rem;
+  cursor: pointer;
+}
+
+.game__task-content--finished {
+  background-color: var(--green);
+}
+
+.game__task-content--unfinished {
+  background-color: var(--white);
+}
+
+.game__task-content {
+  margin: 0 auto;
+  display: inline-block;
+  border-radius: 3rem;
+  padding: 1rem 3rem;
+}
+
+.game__task-content-title {
+  display: inline-block;
+}
+
+.game__task-content-status {
+  display: inline-block;
 }
