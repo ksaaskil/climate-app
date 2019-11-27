@@ -27,7 +27,7 @@
 }
 
 .game__task-content--finished {
-  background-color: var(--green);
+  background-color: #4bb543;
 }
 
 .game__task-content--unfinished {
@@ -47,4 +47,9 @@
 
 .game__task-content-status {
   display: inline-block;
+}
+
+.game__status {
+  font-size: 2rem;
+  text-align: center;
 }

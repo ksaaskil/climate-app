@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Play from "./play"
 import "./game.css"
 
@@ -12,8 +12,12 @@ tasks.forEach(task => {
 
 const Task = ({ title, onFinish }) => {
   const [state, setState] = useState(false)
+  const onClick = () => {
+    setState(true)
+    onFinish()
+  }
   return (
-    <div className={`game__task`} onClick={() => setState(true)}>
+    <div className={`game__task`} onClick={() => onClick()}>
       <div
         className={`game__task-content ${
           state
@@ -30,19 +34,36 @@ const Task = ({ title, onFinish }) => {
 
 const Game = () => {
   const [state, setState] = useState(finished)
-
-  const onFinish = task => {
-    finished[task] = true
-    setState(finished)
+  const [tasksLeft, setTasksLeft] = useState(Object.keys(finished).length)
+  const onFinishTask = task => {
+    const finishedCopy = { ...state, [task]: true }
+    setState(finishedCopy)
   }
+
+  useEffect(() => {
+    const nTasksLeft = Object.values(state).filter(value => !value).length
+    setTasksLeft(nTasksLeft)
+    console.log("Updated value", nTasksLeft)
+  }, [state])
 
   return (
     <div className="game">
-      <div className="game__title">Play a climate game!</div>
+      <div className="game__title">Climate game</div>
       <div className="tasks">
         {tasks.map(task => (
-          <Task title={task} key={task} onFinish={onFinish} />
+          <Task title={task} key={task} onFinish={() => onFinishTask(task)} />
         ))}
+      </div>
+      <div
+        className={`game__status ${
+          tasksLeft === 0 ? "game__status--finished" : "game__status-togo"
+        }`}
+      >
+        {tasksLeft === 0
+          ? "All tasks finished, you're awesome!"
+          : `Keep going, only ${tasksLeft} task${
+              tasksLeft > 1 ? "s" : ""
+            } left!`}
       </div>
     </div>
   )
